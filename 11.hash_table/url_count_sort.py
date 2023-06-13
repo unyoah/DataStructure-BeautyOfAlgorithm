@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'xiaoxiaoming'
+__author__ = "xiaoxiaoming"
 
 url_count_dict = {}
 k = 0
@@ -9,7 +9,8 @@ with open("access.log", "r") as f:
         if len(url) > 0:
             value = url_count_dict.setdefault(url, 0) + 1
             url_count_dict[url] = value
-            if value > k: k = value
+            if value > k:
+                k = value
 result = []
 # k不大可以使用桶排序,每个次数一个桶
 if k < 10:

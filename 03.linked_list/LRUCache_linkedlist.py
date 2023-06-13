@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'xiao-xiaoming'
+__author__ = "xiao-xiaoming"
 
 import random
 
@@ -71,10 +71,10 @@ class LRUCache:
         while p:
             vals.append(str(p.val))
             p = p.next
-        return '->'.join(vals)
+        return "->".join(vals)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     cache = LRUCache(4)
     for n in range(40):
         i = random.randint(0, 7)

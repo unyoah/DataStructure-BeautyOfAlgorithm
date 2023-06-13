@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'xiao-xiaoming'
+__author__ = "xiao-xiaoming"
 
 
 class Array:
@@ -16,46 +16,45 @@ class Array:
         return len(self._data)
 
     def __iter__(self):
-        for item in self._data:
-            yield item
+        return self._data.__iter__()
 
     def __repr__(self):
         return str(self._data)
 
     def find(self, index: int) -> object:
-        '''根据索引，找到数据中的元素并返回
+        """根据索引，找到数据中的元素并返回
         参数：
             index:将要查找的数据的下标
         返回：
             如果查找成功，则返回找到的数据
             如果角标越界，则返回False
-        '''
-        if (index < 0 or index >= len(self)):
+        """
+        if index < 0 or index >= len(self):
             return -1
         return self._data[index]
 
     def delete(self, index: int) -> bool:
-        '''根据索引，删除数组中元素.
+        """根据索引，删除数组中元素.
         参数：
             index:将要删除的数据的下标
         返回：
             如果删除成功，则返回True
             如果删除失败，则返回False
-        '''
-        if (index < 0 or index >= len(self)):
+        """
+        if index < 0 or index >= len(self):
             return False
         self._data.pop(index)
         return True
 
     def insert(self, index: int, value: int) -> bool:
-        '''数组插入数据操作.
+        """数组插入数据操作.
         参数：
             index:将要插入的下标
             value：将要插入的数据
         返回：
             如果插入成功，则返回True
             如果插入失败，则返回False
-        '''
+        """
         if index < 0 or len(self) >= self._capacity:
             return False
         else:
@@ -78,4 +77,3 @@ if __name__ == "__main__":
     print(array)
     array.insert(3, 7)
     print(array)
-

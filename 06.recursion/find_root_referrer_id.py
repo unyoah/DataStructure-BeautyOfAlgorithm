@@ -12,10 +12,9 @@ def find_root_referrer_id(actorId: int, relation=None):
         relation = set()
     relation.add(actorId)
     referrerId = cursor.execute(r"select referrer_id from user_info where actor_id = %s", actorId)
-    if referrerId in relation or referrerId == None:
+    if referrerId in relation or referrerId is None:
         return actorId
     return find_root_referrer_id(referrerId)
-
 find_root_referrer_id(1)
 
 cursor.close()
